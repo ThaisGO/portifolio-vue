@@ -1,0 +1,24 @@
+{
+  "name": "portifolio-vue",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tsparticles/vue3": "^3.0.1",
+    "tsparticles": "^3.5.0",
+    "vue": "^3.4.29",
+    "vue-router": "^4.3.3",
+    "vue3-particles": "^2.12.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "sass": "^1.32.7",
+    "sass-loader": "^12.0.0",
+    "vite": "^5.3.1"
+  }
+}
