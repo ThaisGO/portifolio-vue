@@ -1,6 +1,7 @@
 @import './base.css';
 
 #app {
+  font-family: "Roboto Mono", monospace;
   max-width: 1400px;
   margin: 0 auto;
   font-weight: normal;

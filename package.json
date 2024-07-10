@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tsparticles/vue3": "^3.0.1",
+    "@vueuse/core": "^10.11.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-vue-next": "^0.407.0",
@@ -24,8 +25,6 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.5",
     "autoprefixer": "^10.4.19",
-    "sass": "^1.32.7",
-    "sass-loader": "^12.0.0",
     "tailwindcss": "^3.4.4",
     "vite": "^5.3.1"
   }

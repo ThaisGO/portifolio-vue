@@ -1,32 +1,34 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+import { useColorMode } from '@vueuse/core'
+
 import Welcome from "@/components/Particles.vue";
 
+import { Button } from '@/components/ui/button'
 import {
   NavigationMenu,
-  NavigationMenuContent,
-  // NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  // NavigationMenuViewport,
   navigationMenuTriggerStyle
 } from '@/components/ui/navigation-menu'
+
+const mode = useColorMode()
 </script>
 
 <template>
   <Welcome />
 
-  <main class="">
-    <nav>
+  <main class="bg-background">
+    <header class="flex">
+      <div> < TG ></div>
+      <nav>
       <!-- <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink> -->
-
       <NavigationMenu>
         <NavigationMenuList>
-          <NavigationMenuItem class="bg-">
-            <NavigationMenuLink href="#" :class="navigationMenuTriggerStyle()">
+          <NavigationMenuItem>
+            <NavigationMenuLink href="#about" :class="navigationMenuTriggerStyle()">
               About Me
             </NavigationMenuLink>
           </NavigationMenuItem>
@@ -45,6 +47,13 @@ import {
         </NavigationMenuList>
       </NavigationMenu>
     </nav>
+
+      <div class="btn">
+        <Button @click="mode = 'dark'" variant="outline">Dark</Button>
+        <Button @click="mode = 'light'" variant="outline">Light</Button>
+      </div>
+    </header>
+
     <RouterView />
   </main>
 </template>
@@ -53,32 +62,24 @@ import {
 main {
   width: 90%;
   max-width: 1400px;
-  margin: 0 auto;
-  background-color: var(--background);
-  opacity: 0.7;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  opacity: 0.8;
 }
 
-/* nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-} */
+header {
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
 
-/* nav a.router-link-exact-active {
-  color: var(--color-text);
+
+nav a.router-link-exact-active {
+  color: var(--primary);
 }
 
 nav a.router-link-exact-active:hover {
   background-color: transparent;
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-} */
 </style>
