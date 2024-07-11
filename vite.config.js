@@ -17,5 +17,10 @@ export default defineConfig({
       // '@': fileURLToPath(new URL('./src', import.meta.url)),
       '@': path.resolve(__dirname, './src'),
     }
+  },
+  server: {
+    mimeTypes: {
+      'application/javascript': ['vue', 'js']
+    }
   }
 })

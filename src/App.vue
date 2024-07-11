@@ -30,7 +30,7 @@ const toggleTheme = () => {
 <template>
   <Welcome />
 
-  <main class="bg-background">
+  <main class="bg-background w-11/12 my-8 mx-auto p-4 rounded-xl">
     <header class="flex">
       <h1>
         TG
@@ -70,11 +70,10 @@ const toggleTheme = () => {
 
 <style scoped>
 main {
-  width: 90%;
   max-width: 1400px;
-  margin: 2rem auto;
-  padding: 1rem;
-  border-radius: 0.75rem;
+  /* margin: 2rem auto; */
+  /* padding: 1rem; */
+  /* border-radius: 0.75rem; */
   opacity: 0.8;
 }
 
