@@ -7,15 +7,16 @@
         CardHeader,
         CardTitle,
     } from '@/components/ui/card'
+
     import { Badge } from '@/components/ui/badge'
 </script>
 
 <template>
-    <h2>Experiência</h2>
-    <Card class="bg-transparent">
+    <h2>Projects</h2>
+
+    <Card>
         <CardHeader>
-            <CardTitle>Desenvolvedora Front-End Júnior - Wiz Soluções</CardTitle>
-            <CardDescription> Fevereiro/2022 - Março/2023</CardDescription>
+            <CardTitle>List Jobs Challenge</CardTitle>
         </CardHeader>
         <CardContent>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt voluptatibus impedit exercitationem
@@ -32,3 +33,7 @@
         </CardFooter>
     </Card>
 </template>
+
+
+
+<style></style>
