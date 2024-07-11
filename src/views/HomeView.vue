@@ -1,11 +1,17 @@
-<script>
+<script setup>
+  import About from '@/components/About.vue';
+  import Experience from '@/components/Experience.vue';
 
 </script>
 
 <template>
-  <main>
-    Home View here
-  </main>
+  <div id="about">
+    <About />
+  </div>
+  <div id="experience">
+    <Experience />
+  </div>
+
 </template>
 
 <style>
