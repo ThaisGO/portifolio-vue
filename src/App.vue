@@ -1,10 +1,12 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+import { ref, watchEffect } from 'vue'
+import { RouterView } from "vue-router";
 import { useColorMode } from '@vueuse/core'
 
 import Welcome from "@/components/Particles.vue";
 
-import { Button } from '@/components/ui/button'
+import { Switch } from '@/components/ui/switch'
+
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -14,6 +16,15 @@ import {
 } from '@/components/ui/navigation-menu'
 
 const mode = useColorMode()
+const isDarkMode = ref(mode.value === 'dark')
+
+watchEffect(() => {
+  isDarkMode.value = mode.value === 'dark'
+})
+
+const toggleTheme = () => {
+  mode.value = mode.value === 'dark' ? 'light' : 'dark'
+}
 </script>
 
 <template>
@@ -21,36 +32,35 @@ const mode = useColorMode()
 
   <main class="bg-background">
     <header class="flex">
-      <div> < TG ></div>
+      <h1>
+        TG
+      </h1>
       <nav>
-      <!-- <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink> -->
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuLink href="#about" :class="navigationMenuTriggerStyle()">
-              About Me
-            </NavigationMenuLink>
-          </NavigationMenuItem>
+        <NavigationMenu>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuLink href="#about" :class="navigationMenuTriggerStyle()">
+                About Me
+              </NavigationMenuLink>
+            </NavigationMenuItem>
 
-          <NavigationMenuItem>
-            <NavigationMenuLink href="#" :class="navigationMenuTriggerStyle()">
-              Projects
-            </NavigationMenuLink>
-          </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink href="#" :class="navigationMenuTriggerStyle()">
+                Projects
+              </NavigationMenuLink>
+            </NavigationMenuItem>
 
-          <NavigationMenuItem>
-            <NavigationMenuLink href="#" :class="navigationMenuTriggerStyle()">
-              Experience
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-    </nav>
+            <NavigationMenuItem>
+              <NavigationMenuLink href="#" :class="navigationMenuTriggerStyle()">
+                Experience
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+      </nav>
 
-      <div class="btn">
-        <Button @click="mode = 'dark'" variant="outline">Dark</Button>
-        <Button @click="mode = 'light'" variant="outline">Light</Button>
+      <div>
+        <Switch :checked="isDarkMode" @update:checked="toggleTheme" />
       </div>
     </header>
 
@@ -70,7 +80,14 @@ main {
 
 header {
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 1px solid aliceblue;
+  padding: 4px 8px;
 }
 
 
@@ -81,5 +98,4 @@ nav a.router-link-exact-active {
 nav a.router-link-exact-active:hover {
   background-color: transparent;
 }
-
 </style>
