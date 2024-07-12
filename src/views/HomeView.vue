@@ -8,19 +8,19 @@
 </script>
 
 <template>
-  <div id="about">
+  <div id="about" class="mb-10">
     <About />
   </div>
 
-  <div id="experience">
+  <div id="experience" class="mb-10">
     <Experience />
   </div>
 
-  <div id="projects" class="my-1">
+  <div id="projects" class="mb-10">
     <Projects />
   </div>
 
-  <Separator />
+  <Separator class="mb-6"/>
   
   <footer>
     <Footer />
@@ -28,7 +28,3 @@
 
 </template>
 
-<style>
-
-
-</style>

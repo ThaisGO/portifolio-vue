@@ -1,5 +1,14 @@
 @import './base.css';
 
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  max-width: 1400px;
+}
+
+
 #app {
   font-family: "Roboto Mono", monospace;
   max-width: 1400px;

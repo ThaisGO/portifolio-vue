@@ -4,7 +4,6 @@ import { RouterView } from "vue-router";
 import { useColorMode } from '@vueuse/core'
 
 import Welcome from "@/components/Particles.vue";
-
 import { Switch } from '@/components/ui/switch'
 
 import {
@@ -30,29 +29,27 @@ const toggleTheme = () => {
 <template>
   <Welcome />
 
-  <main class="bg-background w-11/12 my-8 mx-auto p-4 rounded-xl">
-    <header class="flex">
-      <h1>
-        TG
-      </h1>
+  <main class="bg-background w-11/12 my-8 mx-auto p-8 rounded-xl opacity-80">
+    <header class="flex justify-between items-center mb-10">
+      <h1 class="text-2xl font-bold border-4 py-1 px-2"> TG </h1>
       <nav>
-        <NavigationMenu>
+        <NavigationMenu class="border-2 rounded-3xl">
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuLink href="#about" :class="navigationMenuTriggerStyle()">
-                About Me
+              <NavigationMenuLink class="rounded-3xl" href="#about" :class="navigationMenuTriggerStyle()">
+                Sobre
               </NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuLink href="#" :class="navigationMenuTriggerStyle()">
-                Projects
+              <NavigationMenuLink class="rounded-3xl" href="#projects" :class="navigationMenuTriggerStyle()">
+                Experiência
               </NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuLink href="#" :class="navigationMenuTriggerStyle()">
-                Experience
+              <NavigationMenuLink class="rounded-3xl" href="#experience" :class="navigationMenuTriggerStyle()">
+                Projetos
               </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
@@ -67,34 +64,3 @@ const toggleTheme = () => {
     <RouterView />
   </main>
 </template>
-
-<style scoped>
-main {
-  max-width: 1400px;
-  /* margin: 2rem auto; */
-  /* padding: 1rem; */
-  /* border-radius: 0.75rem; */
-  opacity: 0.8;
-}
-
-header {
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-}
-
-h1 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  border: 1px solid aliceblue;
-  padding: 4px 8px;
-}
-
-
-nav a.router-link-exact-active {
-  color: var(--primary);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-</style>
