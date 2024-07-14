@@ -1,10 +1,19 @@
 <script setup>
+  import { onBeforeMount } from 'vue';
+  
   import About from '@/components/About.vue';
   import Experience from '@/components/Experience.vue';
   import Projects from '@/components/Projects.vue' 
   import Footer from '@/components/Footer.vue' 
 
   import { Separator } from '@/components/ui/separator'
+  import getExperience from '@/composables/getExperience';
+
+  const {listExp, error, getExp} = getExperience()
+
+  onBeforeMount(() => {
+    getExp();
+  })
 </script>
 
 <template>
@@ -13,7 +22,7 @@
   </div>
 
   <div id="experience" class="mb-10">
-    <Experience />
+    <Experience :experiences="listExp"/>
   </div>
 
   <div id="projects" class="mb-10">
@@ -25,6 +34,5 @@
   <footer>
     <Footer />
   </footer>
-
 </template>
 
